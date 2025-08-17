@@ -1,21 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* 浅色模式背景颜色 */
+  --background-primary: #FFFFFF;
+  --background-secondary: #F2F2F7;
+  --background-tertiary: #FFFFFF;
+  
+  /* 分层背景颜色 */
+  --layer-primary: #F2F2F7;
+  --layer-secondary: #FFFFFF;
+  --layer-tertiary: #F2F2F7;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* 浅色模式标签颜色 */
+  --label-primary: #000000; /* 纯黑 */
+  --label-secondary: rgba(60, 60, 67, 0.6); /* 3C3C43 with 60% opacity */
+  --label-tertiary: rgba(60, 60, 67, 0.3);  /* 3C3C43 with 30% opacity */
+  --label-quaternary: rgba(60, 60, 67, 0.18); /* 3C3C43 with 18% opacity */
+  
+  /* 分割线颜色 */
+  --divider-color: #C6C6C8;
+  --divider-color-transparent: rgba(84, 84, 86, 0.34);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* 深色模式背景颜色 */
+    --background-primary: #000000;
+    --background-secondary: #1C1C1E;
+    --background-tertiary: #2C2C2E;
+    
+    /* 深色模式分层背景颜色 */
+    --layer-primary: #000000;
+    --layer-secondary: #1C1C1E;
+    --layer-tertiary: #2C2C2E;
+
+    /* 深色模式标签颜色 */
+    --label-primary: #FFFFFF; /* 纯白 */
+    --label-secondary: rgba(235, 235, 245, 0.6); /* EBEBF5 with 60% opacity */
+    --label-tertiary: rgba(235, 235, 245, 0.3);  /* EBEBF5 with 30% opacity */
+    --label-quaternary: rgba(235, 235, 245, 0.16); /* EBEBF5 with 16% opacity */
+    
+    /* 深色模式分割线颜色 */
+    --divider-color: #38383A;
+    --divider-color-transparent: rgba(84, 84, 86, 0.6);
   }
 }
 
@@ -26,7 +53,10 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--background-primary);
+  color: var(--label-primary); /* 使用 label-primary 作为默认文字颜色 */
+  /* 系统字体配置 */
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
