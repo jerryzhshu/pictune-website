@@ -1,0 +1,3 @@
+# 重定向规则
+pictune.net/* https://jerrycode.fun/:splat 301
+www.pictune.net/* https://jerrycode.fun/:splat 301
