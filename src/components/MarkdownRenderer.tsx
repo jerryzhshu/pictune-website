@@ -30,7 +30,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
               className="font-semibold text-[var(--label-primary)] transition-colors duration-300" 
               style={{
                 fontSize: '1.05rem',
-                marginTop: '20px',
+                marginTop: '17px',
                 marginBottom: '6px',
                 lineHeight: '110%',
                 letterSpacing: '0.02em'
@@ -44,7 +44,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
               className="font-semibold text-[var(--label-primary)] transition-colors duration-300" 
               style={{
                 fontSize: '1.05rem',
-                marginTop: '20px',
+                marginTop: '17px',
                 marginBottom: '6px',
                 lineHeight: '110%',
                 letterSpacing: '0.02em'
@@ -57,8 +57,9 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             <p 
               className="text-[var(--label-primary)] transition-colors duration-300" 
               style={{
-                lineHeight: '150%',
                 fontSize: '1rem',
+                marginBottom: '17px',
+                lineHeight: '150%',
                 letterSpacing: '0.02em'
               }}
             >
@@ -85,8 +86,8 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             <li 
               className="text-[var(--label-primary)] transition-colors duration-300" 
               style={{
-                lineHeight: '150%',
                 fontSize: '1rem',
+                lineHeight: '150%',
                 letterSpacing: '0.02em'
               }}
             >

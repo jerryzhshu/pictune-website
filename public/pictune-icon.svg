@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="16" fill="url(#pictune-gradient)"/>
+  <path d="M20 24C20 21.7909 21.7909 20 24 20H40C42.2091 20 44 21.7909 44 24V40C44 42.2091 42.2091 44 40 44H24C21.7909 44 20 42.2091 20 40V24Z" fill="white" fill-opacity="0.9"/>
+  <path d="M28 32C28 29.7909 29.7909 28 32 28C34.2091 28 36 29.7909 36 32C36 34.2091 34.2091 36 32 36C29.7909 36 28 34.2091 28 32Z" fill="url(#pictune-gradient)"/>
+  <path d="M36 26L38 24M26 38L24 40M38 40L36 38M26 24L24 26" stroke="url(#pictune-gradient)" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="pictune-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+</svg>

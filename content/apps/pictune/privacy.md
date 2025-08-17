@@ -6,34 +6,24 @@ PicTune is an innovative photo editing app that allows you to add album covers a
 
 ## Information We Collect
 
-When using the PicTune App, we may collect the following types of information:
-
-\- Personal Information: When you use our services, participate in social interactions, or communicate with us, we may collect the personal information you provide, such as your name, email address, and phone number.
-
-\- Device Information: We may collect information related to the device you use, such as device model, operating system version, and unique device identifiers.
-
-\- Log Information: When you use our services, we may automatically collect log information about your activities, such as your IP address, access time, and accessed pages.
+When using the PicTune App, we may collect the following types of information:\
+\- Personal Information: When you use our services, participate in social interactions, or communicate with us, we may collect the personal information you provide, such as your name, email address, and phone number.\
+\- Device Information: We may collect information related to the device you use, such as device model, operating system version, and unique device identifiers.\
+\- Log Information: When you use our services, we may automatically collect log information about your activities, such as your IP address, access time, and accessed pages.\
 
 ## How We Use the Information
 
-The information we collect will be used for the following purposes:
-
-\- To provide, maintain, and improve the services of the PicTune App.
-
-\- To provide you with a personalized user experience, including recommending relevant song content and optimizing service features.
-
-\- To process your requests, complaints, and feedback.
-
-\- To prevent fraud and abuse, and to protect user rights and security.
-
+The information we collect will be used for the following purposes:\
+\- To provide, maintain, and improve the services of the PicTune App.\
+\- To provide you with a personalized user experience, including recommending relevant song content and optimizing service features.\
+\- To process your requests, complaints, and feedback.\
+\- To prevent fraud and abuse, and to protect user rights and security.\
 \- To comply with applicable laws, regulations, and regulatory requirements.
 
 ## Sharing and Disclosure of Information
 
-We will not share or disclose your personal information to any third party without your consent, unless otherwise required by laws or regulations. However, we may share your information under the following circumstances:
-
-\- When we need to cooperate with third parties to provide you with relevant services, we may share necessary information with them. In such cases, we will require them to comply with this Privacy Policy and relevant confidentiality agreements.
-
+We will not share or disclose your personal information to any third party without your consent, unless otherwise required by laws or regulations. However, we may share your information under the following circumstances:\
+\- When we need to cooperate with third parties to provide you with relevant services, we may share necessary information with them. In such cases, we will require them to comply with this Privacy Policy and relevant confidentiality agreements.\
 \- When disclosure is required under applicable laws, regulations, or requests from government authorities.
 
 ## Information Storage and Protection
