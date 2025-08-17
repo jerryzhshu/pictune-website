@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/jerrycode-website',
-  assetPrefix: '/jerrycode-website/',
 };
 
 export default nextConfig;
