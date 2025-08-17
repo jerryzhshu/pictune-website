@@ -52,11 +52,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 1em;
+  font: -apple-system-body;
+}
+
 body {
   background: var(--background-primary);
-  color: var(--label-primary); /* 使用 label-primary 作为默认文字颜色 */
-  /* 系统字体配置 */
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+  color: var(--label-primary);
+  font: -apple-system-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
