@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import PrivacyLayout from '@/components/PrivacyLayout';
+import DocumentLayout from '@/components/DocumentLayout';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { getDocument, getAvailableApps } from '@/lib/markdown';
 
@@ -32,10 +32,10 @@ export default async function DocumentPage({ params }: PageProps) {
   }
 
   return (
-    <PrivacyLayout>
+    <DocumentLayout>
       {/* 内容区域 */}
       <MarkdownRenderer content={document.content} />
-    </PrivacyLayout>
+    </DocumentLayout>
   );
 }
 
