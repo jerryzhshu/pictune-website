@@ -1,4 +1,4 @@
-# PicTune Privacy Policy
+# PRIVACY POLICY
 
 ---
 

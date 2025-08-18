@@ -1,4 +1,4 @@
-# toHDR Privacy Policy
+# PRIVACY POLICY
 
 ---
 
