@@ -12,10 +12,16 @@
   --layer-tertiary: #F2F2F7;
 
   /* 浅色模式标签颜色 */
-  --label-primary: #000000; /* 纯黑 */
-  --label-secondary: rgba(60, 60, 67, 0.6); /* 3C3C43 with 60% opacity */
-  --label-tertiary: rgba(60, 60, 67, 0.3);  /* 3C3C43 with 30% opacity */
-  --label-quaternary: rgba(60, 60, 67, 0.18); /* 3C3C43 with 18% opacity */
+  --label-primary: #000000;
+  --label-secondary: rgba(60, 60, 67, 0.6);
+  --label-tertiary: rgba(60, 60, 67, 0.3);
+  --label-quaternary: rgba(60, 60, 67, 0.18);
+  
+  /* 浅色模式填充颜色 */
+  --fill-primary: rgba(120, 120, 128, 0.20);
+  --fill-secondary: rgba(120, 120, 128, 0.16);
+  --fill-tertiary: rgba(120, 120, 128, 0.12);
+  --fill-quaternary: rgba(120, 120, 128, 0.08);
   
   /* 分割线颜色 */
   --divider-color: #C6C6C8;
@@ -35,10 +41,16 @@
     --layer-tertiary: #2C2C2E;
 
     /* 深色模式标签颜色 */
-    --label-primary: #FFFFFF; /* 纯白 */
-    --label-secondary: rgba(235, 235, 245, 0.6); /* EBEBF5 with 60% opacity */
-    --label-tertiary: rgba(235, 235, 245, 0.3);  /* EBEBF5 with 30% opacity */
-    --label-quaternary: rgba(235, 235, 245, 0.16); /* EBEBF5 with 16% opacity */
+    --label-primary: #FFFFFF;
+    --label-secondary: rgba(235, 235, 245, 0.6);
+    --label-tertiary: rgba(235, 235, 245, 0.3);
+    --label-quaternary: rgba(235, 235, 245, 0.16);
+    
+    /* 深色模式填充颜色 */
+    --fill-primary: rgba(120, 120, 128, 0.36);
+    --fill-secondary: rgba(120, 120, 128, 0.32);
+    --fill-tertiary: rgba(120, 120, 128, 0.24);
+    --fill-quaternary: rgba(120, 120, 128, 0.18);
     
     /* 深色模式分割线颜色 */
     --divider-color: #38383A;
@@ -46,15 +58,61 @@
   }
 }
 
-* {
+/* 字体样式类 */
+.large-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.41176rem; /* 120.588% */
+  letter-spacing: 0.02353rem;
+}
+
+.title1 {
+  font-size: 1.64706rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 121.429% */
+  letter-spacing: 0.02235rem;
+}
+
+.title2 {
+  font-size: 1.29412rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.64706rem; /* 127.273% */
+  /* letter-spacing: -0.01529rem; */
+}
+
+.body-text {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29412rem; /* 129.412% */
+  /* letter-spacing: -0.02529rem; */
+}
+
+.footnote {
+  font-size: 0.76471rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.05882rem; /* 138.462% */
+  /* letter-spacing: -0.00471rem; */
+}
+
+/* 保持空格不被合并 */
+.preserve-whitespace {
+  white-space: pre;
+}
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 html {
-  font-size: 1em;
   font: -apple-system-body;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   overflow-x: hidden;
   background: var(--background-primary);
 }
@@ -63,6 +121,7 @@ body {
   background: var(--background-primary);
   color: var(--label-primary);
   font: -apple-system-body;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -76,3 +135,4 @@ html:has(body.document-page) {
 body.document-page {
   background: var(--layer-secondary);
 }
+

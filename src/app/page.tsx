@@ -1,132 +1,143 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { getAvailableApps } from '@/lib/markdown';
+import AppCard from '@/components/AppCard';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
-export default async function Home() {
-  const availableApps = getAvailableApps();
-  
+// 图片资源常量
+const imgPortrait = "/homeimage/portrait.png";
+
+// 根据主题选择图片的函数
+const getThemedImage = (baseName: string) => {
+  return {
+    light: `/homeimage/${baseName}-light.png`,
+    dark: `/homeimage/${baseName}-dark.png`
+  };
+};
+
+// 应用图片资源
+const picTuneImages = {
+  icon: getThemedImage('pictune-icon'),
+  app: getThemedImage('pictune-app')
+};
+
+const toHDRImages = {
+  icon: getThemedImage('tohdr-icon'),
+  app: getThemedImage('tohdr-app')
+};
+
+// App Store 链接
+const picTuneAppStoreUrl = "https://apps.apple.com/cn/app/pictune-%E9%9F%B3%E4%B9%90%E5%AE%9E%E5%86%B5%E7%85%A7%E7%89%87/id6744852198?itscg=30200&itsct=apps_box_badge&mttnsubad=6744852198";
+const toHDRAppStoreUrl = "https://apps.apple.com/cn/app/tohdr/id6746218392?itscg=30200&itsct=apps_box_badge&mttnsubad=6746218392";
+
+export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-[var(--background-primary)]">
-      {/* 主要内容容器 */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="flex flex-col items-center justify-start min-h-screen w-full" style={{ backgroundColor: 'var(--background-primary)' }}>
+      <div className="flex flex-col gap-16 md:gap-[100px] items-center md:items-start justify-start max-w-[1000px] w-full px-4 md:px-5 pt-16 md:pt-[100px] pb-0">
         
-        {/* 个人头像和介绍区域 */}
-        <section className="text-center mb-16">
-          {/* 头像 */}
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-              J
-            </div>
+        {/* Self Introduction Section */}
+        <div className="flex flex-col gap-5 items-center md:items-start justify-start w-full text-center md:text-left">
+          {/* Portrait */}
+          <div 
+            className="bg-center bg-cover bg-no-repeat relative rounded-full w-[150px] h-[150px] md:w-[180px] md:h-[180px] shrink-0"
+            style={{ backgroundImage: `url('${imgPortrait}')` }}
+          >
+            <div 
+              aria-hidden="true" 
+              className="absolute border border-solid inset-[-0.5px] pointer-events-none rounded-full" 
+              style={{ borderColor: 'var(--fill-secondary)' }}
+            />
           </div>
           
-          {/* 个人介绍 */}
-          <h1 className="text-3xl font-bold text-[var(--label-primary)] mb-4">
-            JerryCode
-          </h1>
-          <p className="text-lg text-[var(--label-secondary)] max-w-2xl mx-auto leading-relaxed">
-            热爱编程的开发者，专注于创造简洁实用的应用。致力于为用户提供优雅的解决方案。
-          </p>
-        </section>
-
-        {/* 应用展示区域 */}
-        <section className="space-y-12">
-          <h2 className="text-2xl font-semibold text-[var(--label-primary)] text-center mb-8">
-            我的应用
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Pictune 应用卡片 */}
-            <div className="bg-[var(--background-secondary)] rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 mr-4">
-                  <Image src="/pictune-icon.svg" alt="Pictune" width={64} height={64} className="w-full h-full" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-[var(--label-primary)]">
-                    Pictune
-                  </h3>
-                  <p className="text-sm text-[var(--label-tertiary)]">
-                    图片处理工具
-                  </p>
-                </div>
+          {/* Introduction */}
+          <div className="flex flex-col items-center md:items-start justify-start w-full">
+            {/* Name */}
+            <div className="large-title w-full" style={{ color: 'var(--label-primary)' }}>
+              JerryCode
+            </div>
+            
+            {/* Information */}
+            <div className="flex flex-col gap-1.5 items-center md:items-start justify-center pb-8 md:pb-10 pt-2.5 px-0 w-full">
+              <div className="body-text w-full preserve-whitespace" style={{ color: 'var(--label-primary)' }}>
+                🧑‍💻  Independent Developer
               </div>
-              
-              <p className="text-[var(--label-secondary)] mb-6 leading-relaxed">
-                专业的图片编辑和处理应用，提供丰富的滤镜效果和编辑工具，让您的照片更加精彩。
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                <Link 
-                  href="/docs/pictune/privacy"
-                  className="inline-flex items-center px-4 py-2 bg-[var(--background-tertiary)] text-[var(--label-primary)] rounded-lg text-sm"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  隐私政策
-                </Link>
-                <Link 
-                  href="/docs/pictune/terms"
-                  className="inline-flex items-center px-4 py-2 bg-[var(--background-tertiary)] text-[var(--label-primary)] rounded-lg text-sm"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                  用户条款
-                </Link>
+              <div className="body-text w-full preserve-whitespace" style={{ color: 'var(--label-primary)' }}>
+                🛠️  Former Tencent WXG PM
+              </div>
+              <div className="body-text w-full preserve-whitespace" style={{ color: 'var(--label-primary)' }}>
+                🎓  Philosophy, Peking University
               </div>
             </div>
-
-            {/* toHDR 应用卡片 */}
-            <div className="bg-[var(--background-secondary)] rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 mr-4">
-                  <Image src="/tohdr-icon.svg" alt="toHDR" width={64} height={64} className="w-full h-full" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-[var(--label-primary)]">
-                    toHDR
-                  </h3>
-                  <p className="text-sm text-[var(--label-tertiary)]">
-                    HDR 转换工具
-                  </p>
-                </div>
+            
+            {/* Links */}
+            <div className="flex flex-col gap-1.5 items-center md:items-start justify-start w-full">
+              <div className="body-text w-full" style={{ color: 'var(--label-secondary)' }}>
+                <a 
+                  href="https://www.google.com/maps?q=22.5429,114.0596" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                  style={{ color: 'var(--label-secondary)' }}
+                >
+                  22°32′ N, 114°05′ E
+                </a>
+                <ExternalLinkIcon />
               </div>
-              
-              <p className="text-[var(--label-secondary)] mb-6 leading-relaxed">
-                将普通照片转换为高动态范围（HDR）图像，增强色彩饱和度和细节表现，让照片更加生动。
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                <Link 
-                  href="/docs/tohdr/privacy"
-                  className="inline-flex items-center px-4 py-2 bg-[var(--background-tertiary)] text-[var(--label-primary)] rounded-lg text-sm"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  隐私政策
-                </Link>
-                <Link 
-                  href="/docs/tohdr/terms"
-                  className="inline-flex items-center px-4 py-2 bg-[var(--background-tertiary)] text-[var(--label-primary)] rounded-lg text-sm"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                  用户条款
-                </Link>
+              <div className="body-text w-full" style={{ color: 'var(--label-secondary)' }}>
+                <a href="mailto:jerrycode@126.com" className="hover:underline">jerrycode@126.com</a>
+                <ExternalLinkIcon />
               </div>
             </div>
           </div>
-        </section>
-
-        {/* 页脚 */}
-        <footer className="mt-16 pt-8 border-t border-[var(--divider-color)] text-center">
-          <p className="text-sm text-[var(--label-tertiary)]">
-            © 2024 JerryCode. 用 ❤️ 制作
-          </p>
-        </footer>
+        </div>
+        
+        {/* Works List Section */}
+        <div className="flex flex-col gap-5 items-center md:items-start justify-start w-full">
+          {/* Title */}
+          <div className="title1 w-full text-center md:text-left" style={{ color: 'var(--label-primary)' }}>
+            Works
+          </div>
+          
+          {/* List */}
+          <div className="flex flex-col gap-6 md:gap-10 items-start justify-start w-full">
+            {/* PicTune App Card */}
+            <AppCard
+              appIcon={picTuneImages.icon}
+              appName="PicTune"
+              appDescription="Add album cover & lyrics to photos"
+              appDetail={
+                <>
+                  <p style={{ marginBottom: '1rem' }}>PicTune is an innovative photo editing app that perfectly blends your photos with music, full of rhythm.</p>
+                  <p>With simple operations, you can add beautifully designed, diverse, and personalized music players, and export Live Photos with scrolling lyrics effects.</p>
+                </>
+              }
+              appImage={picTuneImages.app}
+              appStoreUrl={picTuneAppStoreUrl}
+            />
+            
+            {/* toHDR App Card */}
+            <AppCard
+              appIcon={toHDRImages.icon}
+              appName="toHDR"
+              appDescription="Convert photos to HDR effects"
+              appDetail="toHDR instantly converts any photo into a bright, vivid HDR (High Dynamic Range) effect. Simple interface, easy to use."
+              appImage={toHDRImages.app}
+              appStoreUrl={toHDRAppStoreUrl}
+            />
+          </div>
+        </div>
+        
+        {/* Footer */}
+        <div className="flex items-center md:items-start justify-center md:justify-start pb-8 md:pb-10 pt-0 px-0 w-full">
+          <div className="footnote text-center md:text-left" style={{ color: 'var(--label-secondary)' }}>
+            © 2025 SHUZHAN · <a 
+              href="https://beian.miit.gov.cn/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:underline"
+              style={{ color: 'var(--label-secondary)' }}
+            >
+              粤ICP备2025409264号-1
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
