@@ -29,8 +29,8 @@ export default function AppCard({
       <div className="flex flex-col gap-6 md:gap-10 grow items-center md:items-start justify-start p-6 md:p-[36px] relative self-stretch min-w-0 text-center md:text-left">
         {/* Header */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-4.5 items-center md:items-center justify-start w-full">
-          {/* App Icon */}
-          <div className="relative rounded-[16px] shrink-0 w-[70px] h-[70px]">
+          {/* App Icon - Clickable */}
+          <a href={appStoreUrl} className="relative rounded-[16px] shrink-0 w-[70px] h-[70px] hover:scale-102 transition-transform duration-200">
             <ThemedBackgroundImage
               lightSrc={appIcon.light}
               darkSrc={appIcon.dark}
@@ -41,16 +41,20 @@ export default function AppCard({
               className="absolute border border-solid inset-0 pointer-events-none rounded-[16px]" 
               style={{ borderColor: 'var(--fill-primary)' }}
             />
-          </div>
+          </a>
           
           {/* Label */}
           <div className="flex flex-col grow items-center md:items-start justify-center min-w-0">
-            <div className="title2 w-full" style={{ color: 'var(--label-primary)' }}>
-              {appName}
-            </div>
-            <div className="body-text w-full" style={{ color: 'var(--label-secondary)' }}>
-              {appDescription}
-            </div>
+            <a href={appStoreUrl} className="hover:opacity-80 transition-opacity duration-200">
+              <div className="title2 w-full" style={{ color: 'var(--label-primary)' }}>
+                {appName}
+              </div>
+            </a>
+            <a href={appStoreUrl} className="hover:opacity-80 transition-opacity duration-200">
+              <div className="body-text w-full" style={{ color: 'var(--label-secondary)' }}>
+                {appDescription}
+              </div>
+            </a>
           </div>
         </div>
         
@@ -71,14 +75,16 @@ export default function AppCard({
         </div>
       </div>
       
-      {/* Image Section - Visible on all devices */}
+      {/* Image Section - Visible on all devices, Clickable */}
       <div className="flex items-center md:items-end justify-center pt-6 md:pt-9 px-6 md:px-9 pb-0 relative shrink-0 self-center md:self-end">
-        <ThemedBackgroundImage
-          lightSrc={appImage.light}
-          darkSrc={appImage.dark}
-          className="w-[275px] h-[399px] md:w-[300px] md:h-[435px]"
-          backgroundSize="contain"
-        />
+        <a href={appStoreUrl} className="hover:scale-[1.025] transition-transform duration-350" style={{ transformOrigin: 'center bottom' }}>
+          <ThemedBackgroundImage
+            lightSrc={appImage.light}
+            darkSrc={appImage.dark}
+            className="w-[275px] h-[399px] md:w-[300px] md:h-[435px]"
+            backgroundSize="contain"
+          />
+        </a>
       </div>
     </div>
   );
