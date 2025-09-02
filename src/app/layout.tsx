@@ -3,7 +3,29 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "JerryCode",
-  description: "一名专注于 Swift 生态的独立开发者",
+  description: "An independent developer focused on Swift ecosystem",
+  keywords: ["Swift", "iOS", "macOS", "Independent Development", "JerryCode", "Mobile Apps", "App Development"],
+  authors: [{ name: "JerryCode" }],
+  creator: "JerryCode",
+  publisher: "JerryCode",
+  metadataBase: new URL('https://jerrycode.fun'),
+  openGraph: {
+    title: "JerryCode",
+    description: "An independent developer focused on Swift ecosystem",
+    type: "website",
+    locale: "en_US",
+    siteName: "JerryCode",
+    url: "https://jerrycode.fun",
+    images: [
+      {
+        url: "https://jerrycode.fun/homeimage/portrait.png",
+        width: 400,
+        height: 400,
+        alt: "JerryCode Logo",
+        type: "image/png",
+      },
+    ],
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -24,6 +46,24 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
+  twitter: {
+    card: "summary_large_image",
+    title: "JerryCode",
+    description: "An independent developer focused on Swift ecosystem",
+    images: ["https://jerrycode.fun/homeimage/portrait.png"],
+    creator: "@jerrycode",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
