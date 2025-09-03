@@ -111,7 +111,7 @@
 } */
 
 html {
-  /* font: -apple-system-body; */
+  font: -apple-system-body;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   overflow-x: hidden;
   background: var(--background-primary);
@@ -120,7 +120,7 @@ html {
 body {
   background: var(--background-primary);
   color: var(--label-primary);
-  /* font: -apple-system-body; */
+  font: -apple-system-body;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
