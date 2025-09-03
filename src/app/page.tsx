@@ -1,8 +1,11 @@
 import AppCard from '@/components/AppCard';
 import ExternalLinkIcon from '@/components/ExternalLinkIcon';
+import Portrait from '@/components/Portrait';
 
 // 图片资源常量
 const imgPortrait = "/homeimage/portrait.png";
+const videoPortraitLight = "/homeimage/dynamic-portrait-light.mp4";
+const videoPortraitDark = "/homeimage/dynamic-portrait-dark.mp4";
 
 // 根据主题选择图片的函数
 const getThemedImage = (baseName: string) => {
@@ -35,16 +38,11 @@ export default function Home() {
         {/* Self Introduction Section */}
         <div className="flex flex-col gap-5 items-center md:items-start justify-start w-full text-center md:text-left">
           {/* Portrait */}
-          <div 
-            className="bg-center bg-cover bg-no-repeat relative rounded-full w-[150px] h-[150px] md:w-[180px] md:h-[180px] shrink-0"
-            style={{ backgroundImage: `url('${imgPortrait}')` }}
-          >
-            <div 
-              aria-hidden="true" 
-              className="absolute border border-solid inset-[-0.5px] pointer-events-none rounded-full" 
-              style={{ borderColor: 'var(--fill-secondary)' }}
-            />
-          </div>
+          <Portrait 
+            imageSrc={imgPortrait} 
+            videoSrcLight={videoPortraitLight} 
+            videoSrcDark={videoPortraitDark} 
+          />
           
           {/* Introduction */}
           <div className="flex flex-col items-center md:items-start justify-start w-full">
