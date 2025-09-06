@@ -9,7 +9,7 @@ PicTune is an innovative photo editing app that allows you to add album covers a
 When using the PicTune App, we may collect the following types of information:\
 \- Personal Information: When you use our services, participate in social interactions, or communicate with us, we may collect the personal information you provide, such as your name, email address, and phone number.\
 \- Device Information: We may collect information related to the device you use, such as device model, operating system version, and unique device identifiers.\
-\- Log Information: When you use our services, we may automatically collect log information about your activities, such as your IP address, access time, and accessed pages.\
+\- Log Information: When you use our services, we may automatically collect log information about your activities, such as your IP address, access time, and accessed pages.
 
 ## How We Use the Information
 
