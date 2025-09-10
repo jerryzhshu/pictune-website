@@ -1,5 +1,6 @@
 import React from 'react';
 import ThemedBackgroundImage from './ThemedBackgroundImage';
+import { useLocale } from '@/contexts/LocaleContext';
 
 interface ThemedImagePair {
   light: string;
@@ -23,6 +24,7 @@ export default function AppCard({
   appImage,
   appStoreUrl
 }: AppCardProps) {
+  const { locale } = useLocale();
   return (
     <div className="flex flex-col md:flex-row gap-0 md:gap-[60px] items-center md:items-start justify-start overflow-hidden relative rounded-[24px] md:rounded-[36px] w-full p-0" style={{ backgroundColor: 'var(--background-secondary)' }}>
       {/* Content Section */}
@@ -44,7 +46,7 @@ export default function AppCard({
           </a>
           
           {/* Label */}
-          <div className="flex flex-col grow items-center md:items-start justify-center min-w-0">
+          <div className="flex flex-col gap-0.25 grow items-center md:items-start justify-center min-w-0">
             <a href={appStoreUrl} className="hover:opacity-80 transition-opacity duration-200">
               <div className="title2 w-full" style={{ color: 'var(--label-primary)' }}>
                 {appName}
@@ -59,7 +61,7 @@ export default function AppCard({
         </div>
         
         {/* App Detail - Hidden on mobile, visible on desktop */}
-        <div className="hidden md:block body-text w-full flex-1" style={{ color: 'var(--label-primary)' }}>
+        <div className="hidden md:block body-text w-full flex-1" style={{ color: 'var(--label-primary)', lineHeight: '1.39' }}>
           {appDetail}
         </div>
         
@@ -67,8 +69,8 @@ export default function AppCard({
         <div className="hidden md:block w-[120px] h-[40px] overflow-hidden relative shrink-0">
           <a href={appStoreUrl} style={{ display: 'inline-block' }}>
             <img 
-              src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1755820800" 
-              alt="Download on the App Store" 
+              src={`https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/${locale === 'zh' ? 'zh-cn' : 'en-us'}?releaseDate=1755820800`}
+              alt={locale === 'zh' ? '立即下载，就在 App Store' : 'Download on the App Store'} 
               style={{ width: '120px', height: '40px', verticalAlign: 'middle', objectFit: 'contain' }} 
             />
           </a>
