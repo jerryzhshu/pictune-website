@@ -3,6 +3,7 @@ import "./globals.css";
 import { LocaleProvider } from '@/contexts/LocaleContext';
 import HtmlLangUpdater from '@/components/HtmlLangUpdater';
 import { generateMetadata } from '@/lib/metadata';
+import DynamicTitle from '@/components/DynamicTitle';
 
 export const metadata = generateMetadata('en'); // Default to English
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className="antialiased">
+        <DynamicTitle />
         <LocaleProvider>
           <HtmlLangUpdater />
           {children}
