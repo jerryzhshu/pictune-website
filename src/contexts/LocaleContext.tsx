@@ -17,7 +17,7 @@ interface LocaleProviderProps {
   initialLocale?: Locale;
 }
 
-export function LocaleProvider({ children, initialLocale = 'en' }: LocaleProviderProps) {
+export function LocaleProvider({ children, initialLocale = 'zh' }: LocaleProviderProps) {
   const [locale, setLocale] = useState<Locale>(initialLocale);
   const [translations, setTranslations] = useState<Translations>(getTranslations(initialLocale));
 
@@ -34,7 +34,7 @@ export function LocaleProvider({ children, initialLocale = 'en' }: LocaleProvide
         }
       } else {
         // Detect browser language if no saved locale
-        const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+        const browserLang = navigator.language || navigator.languages?.[0] || 'zh';
         const detectedLocale: Locale = browserLang.startsWith('zh') ? 'zh' : 'en';
         
         if (detectedLocale !== locale) {

@@ -9,7 +9,7 @@ interface MetadataTranslations {
 
 const metadataTranslations: Record<Locale, MetadataTranslations> = {
   en: {
-    title: 'PicTune 应用介绍',
+    title: 'PicTune Introduction',
     description: 'Add album cover & lyrics to photos',
     keywords: ['PicTune', 'iOS', 'macOS', 'Music', 'Photo Editing', 'Album Cover', 'Lyrics', 'App Development'],
   },
@@ -20,7 +20,7 @@ const metadataTranslations: Record<Locale, MetadataTranslations> = {
   },
 };
 
-export function generateMetadata(locale: Locale = 'en'): Metadata {
+export function generateMetadata(locale: Locale = 'zh'): Metadata {
   const translations = metadataTranslations[locale];
   
   return {

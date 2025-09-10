@@ -127,7 +127,7 @@ export default function Home() {
               appStoreUrl={picTuneAppStoreUrl}
             />
             
-            {/* toHDR App Card */}
+            {/* toHDR App Card
             <AppCard
               appIcon={toHDRImages.icon}
               appName="toHDR"
@@ -135,7 +135,7 @@ export default function Home() {
               appDetail={translations.tohdrDetail}
               appImage={toHDRImages.app}
               appStoreUrl={toHDRAppStoreUrl}
-            />
+            /> */}
           </div>
         </div>
         
