@@ -9,14 +9,14 @@ interface MetadataTranslations {
 
 const metadataTranslations: Record<Locale, MetadataTranslations> = {
   en: {
-    title: 'JerryCode',
-    description: 'An independent developer focused on Swift ecosystem',
-    keywords: ['Swift', 'iOS', 'macOS', 'Independent Development', 'JerryCode', 'Mobile Apps', 'App Development'],
+    title: 'PicTune App Introduction',
+    description: 'Add album cover & lyrics to photos',
+    keywords: ['PicTune', 'iOS', 'macOS', 'Music', 'Photo Editing', 'Album Cover', 'Lyrics', 'App Development'],
   },
   zh: {
-    title: 'JerryCode',
-    description: '专注于 Swift 生态的独立开发者',
-    keywords: ['Swift', 'iOS', 'macOS', '独立开发', 'JerryCode', '移动应用', '应用开发'],
+    title: 'PicTune 应用介绍',
+    description: '为照片添加专辑封面和动态歌词',
+    keywords: ['PicTune', 'iOS', 'macOS', '音乐', '照片编辑', '专辑封面', '歌词', '应用开发'],
   },
 };
 
@@ -27,23 +27,23 @@ export function generateMetadata(locale: Locale = 'en'): Metadata {
     title: translations.title,
     description: translations.description,
     keywords: translations.keywords,
-    authors: [{ name: 'JerryCode' }],
-    creator: 'JerryCode',
-    publisher: 'JerryCode',
-    metadataBase: new URL('https://jerrycode.fun'),
+    authors: [{ name: 'PicTune' }],
+    creator: 'PicTune',
+    publisher: 'PicTune',
+    metadataBase: new URL('https://pictune.net'),
     openGraph: {
       title: translations.title,
       description: translations.description,
       type: 'website',
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',
-      siteName: 'JerryCode',
-      url: 'https://jerrycode.fun',
+      siteName: 'PicTune',
+      url: 'https://pictune.net',
       images: [
         {
-          url: 'https://jerrycode.fun/homeimage/portrait/portrait.png',
+          url: 'https://pictune.net/homeimage/portrait/portrait.png',
           width: 400,
           height: 400,
-          alt: 'JerryCode Logo',
+          alt: 'PicTune Logo',
           type: 'image/png',
         },
       ],
@@ -72,8 +72,8 @@ export function generateMetadata(locale: Locale = 'en'): Metadata {
       card: 'summary_large_image',
       title: translations.title,
       description: translations.description,
-      images: ['https://jerrycode.fun/homeimage/portrait/portrait.png'],
-      creator: '@jerrycode',
+      images: ['https://pictune.net/homeimage/portrait/portrait.png'],
+      creator: '@pictune',
     },
     robots: {
       index: true,
