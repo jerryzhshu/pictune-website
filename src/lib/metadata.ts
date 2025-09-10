@@ -9,7 +9,7 @@ interface MetadataTranslations {
 
 const metadataTranslations: Record<Locale, MetadataTranslations> = {
   en: {
-    title: 'PicTune App Introduction',
+    title: 'PicTune 应用介绍',
     description: 'Add album cover & lyrics to photos',
     keywords: ['PicTune', 'iOS', 'macOS', 'Music', 'Photo Editing', 'Album Cover', 'Lyrics', 'App Development'],
   },
